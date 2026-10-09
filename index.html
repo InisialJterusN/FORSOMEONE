@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Apology ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400&display=swap');
+
+:root {
+  --bg: #f7f1ed;
+  --paper: #fffdfb;
+  --pink: #b98189;
+  --text: #715b5d;
+  --muted: #a49391;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 14px;
+  border: 1px solid #dfc9c2;
+  pointer-events: none;
+}
+
+main {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  padding: 36px 26px;
+  animation: fadeIn 1.6s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.heart {
+  color: var(--pink);
+  font-size: 28px;
+  margin-bottom: 18px;
+  display: inline-block;
+  animation: softBeat 3s ease-in-out infinite;
+}
+
+@keyframes softBeat {
+  0%, 100% { transform: scale(1); opacity: .75; }
+  50% { transform: scale(1.09); opacity: 1; }
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(39px, 10vw, 53px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  color: #8d666c;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #a38c89;
+}
+
+.line {
+  width: 38px;
+  height: 1px;
+  background: #cda6a5;
+  margin: 27px auto;
+}
+
+.intro {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 2.1;
+  color: #887573;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.open-btn {
+  margin-top: 30px;
+  background: transparent;
+  border: 1px solid #cdb0aa;
+  border-radius: 2px;
+  padding: 12px 22px;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #88686b;
+  transition: background .3s, color .3s;
+}
+
+.open-btn:hover {
+  background: #eadbd5;
+  color: #684c51;
+}
+
+.letter {
+  display: none;
+  margin-top: 30px;
+  padding: 25px 19px;
+  border: 1px solid #eadbd5;
+  background: rgba(255, 253, 251, .65);
+  animation: letterIn .9s ease both;
+}
+
+.letter.visible {
+  display: block;
+}
+
+@keyframes letterIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #795f60;
+}
+
+.signature {
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-style: italic;
+  color: #ae7c83;
+}
+
+.footer {
+  margin-top: 35px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #b2a09c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<main>
+  <div class="eyebrow">A LETTER FROM MY HEART</div>
+
+  <div class="heart">♡</div>
+
+  <h1>I'm sorry,<br>cinndyyyyy.</h1>
+
+  <p class="subtitle">
+    there something i wanna tell you cinn
+  </p>
+
+  <div class="line"></div>
+
+  <p class="intro">
+    i don't know how to say sorry 
+    but can you open the letter 
+    i just wanna tell about eeee baca aja dehh...
+  </p>
+
+  <button class="open-btn" id="openBtn"
+    onclick="openLetter()">
+    BACA SURAT PERMINTAAN MAAFKECILKU &nbsp; ♡
+  </button>
+
+  <section class="letter" id="letter">
+    <p>
+      cinnnn,<br><br>
+
+      papoy papoy papaya
+      poy poy papoy
+      poo paye
+      bi do bi do
+      wab yu!
+    </p>
+
+    <div class="signature">
+       ♡
+    </div>
+  </section>
+
+  <div class="footer">
+    MADE WITH LOVE , JANSON 
+  </div>
+</main>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById('letter');
+  const button = document.getElementById('openBtn');
+
+  letter.classList.add('visible');
+  button.textContent = 'DARI HATIKU, UNTUKMU ♡';
+  button.disabled = true;
+  button.style.opacity = '0.65';
+
+  setTimeout(() => {
+    letter.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }, 150);
+}
+</script>
+</body>
+</html>
